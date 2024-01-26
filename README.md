@@ -2,7 +2,7 @@
 
 ## Exécuter le code
 
-Exécuter la commande `node .`.
+Exécuter `npm start` (ou `npm run start`).
 
 ## Initialisation d'un projet similaire
 
