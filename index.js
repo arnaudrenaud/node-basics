@@ -6,9 +6,8 @@ function getNotesSorted(notes) {
     const isPinnedDifferent = noteB.isPinned - noteA.isPinned;
     if (isPinnedDifferent) {
       return isPinnedDifferent;
-    } else {
-      return noteB.lastUpdatedAt - noteA.lastUpdatedAt;
     }
+    return noteB.lastUpdatedAt - noteA.lastUpdatedAt;
   });
 }
 
