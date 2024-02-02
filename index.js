@@ -2,7 +2,7 @@
 
 // Définition classique d'une fonction avec le mot-clé `function`
 function getNotesSorted(notes) {
-  return notes.sort(function (noteA, noteB) {
+  return notes.sort((noteA, noteB) => {
     const isPinnedDifferent = noteB.isPinned - noteA.isPinned;
     if (isPinnedDifferent) {
       return isPinnedDifferent;
