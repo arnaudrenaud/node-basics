@@ -9,8 +9,7 @@ const getNotesSorted = (notes) =>
   );
 
 function getNotesWithNewNote(notes, newNote) {
-  notes.push(newNote);
-  return notes;
+  return notes.concat(newNote);
 }
 
 // Définition d'une fonction avec la notation fléchée (fat arrow)
