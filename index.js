@@ -1,13 +1,16 @@
 // Note : {content: string, lastUpdatedAt: Date, isPinned: boolean}
 
 // Définition classique d'une fonction avec le mot-clé `function`
-function getNotesSorted(notes) {
-  return notes.sort((noteA, noteB) => {
-    return (
+const getNotesSorted = (notes) =>
+  notes.sort(
+    (noteA, noteB) =>
       noteB.isPinned - noteA.isPinned ||
       noteB.lastUpdatedAt - noteA.lastUpdatedAt
-    );
-  });
+  );
+
+function getNotesWithNewNote(notes, newNote) {
+  notes.push(newNote);
+  return notes;
 }
 
 // Définition d'une fonction avec la notation fléchée (fat arrow)
@@ -15,4 +18,4 @@ function getNotesSorted(notes) {
 //   // return notes sorted
 // };
 
-module.exports = { getNotesSorted };
+module.exports = { getNotesSorted, getNotesWithNewNote };

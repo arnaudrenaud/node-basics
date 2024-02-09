@@ -1,4 +1,4 @@
-const { getNotesSorted } = require("./index");
+const { getNotesSorted, getNotesWithNewNote } = require("./index");
 
 test("Addition", () => {
   expect(1 + 1).toEqual(2);
@@ -49,5 +49,45 @@ describe("getNotesSorted", function () {
         },
       ]);
     });
+  });
+});
+
+describe("getNotesWithNewNote", function () {
+  it("returns notes with new note at the end", () => {
+    const notes = [
+      {
+        content: "Tests automatisés avec Jest",
+        lastUpdatedAt: new Date("2024-01-26T12:00:00.000Z"),
+        isPinned: false,
+      },
+      {
+        content: "Apprentissage de JavaScript",
+        lastUpdatedAt: new Date("2024-01-26T14:00:00.000Z"),
+        isPinned: false,
+      },
+    ];
+    const newNote = {
+      content: "Application Node.js",
+      lastUpdatedAt: new Date("2024-01-26T13:00:00.000Z"),
+      isPinned: true,
+    };
+
+    expect(getNotesWithNewNote(notes, newNote)).toEqual([
+      {
+        content: "Tests automatisés avec Jest",
+        lastUpdatedAt: new Date("2024-01-26T12:00:00.000Z"),
+        isPinned: false,
+      },
+      {
+        content: "Apprentissage de JavaScript",
+        lastUpdatedAt: new Date("2024-01-26T14:00:00.000Z"),
+        isPinned: false,
+      },
+      {
+        content: "Application Node.js",
+        lastUpdatedAt: new Date("2024-01-26T13:00:00.000Z"),
+        isPinned: true,
+      },
+    ]);
   });
 });
