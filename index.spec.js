@@ -1,4 +1,8 @@
-const { getNotesSorted, getNotesWithNewNote } = require("./index");
+const {
+  getNotesSorted,
+  getNotesWithNewNote,
+  getNoteWithAuthor,
+} = require("./index");
 
 test("Addition", () => {
   expect(1 + 1).toEqual(2);
@@ -89,5 +93,25 @@ describe("getNotesWithNewNote", function () {
         isPinned: true,
       },
     ]);
+  });
+});
+
+describe("getNoteWithAuthor", () => {
+  it("returns note with author attribute", () => {
+    expect(
+      getNoteWithAuthor(
+        {
+          content: "Application Node.js",
+          lastUpdatedAt: new Date("2024-01-26T13:00:00.000Z"),
+          isPinned: true,
+        },
+        "Arnaud"
+      )
+    ).toEqual({
+      content: "Application Node.js",
+      lastUpdatedAt: new Date("2024-01-26T13:00:00.000Z"),
+      isPinned: true,
+      author: "Arnaud",
+    });
   });
 });

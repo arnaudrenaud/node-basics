@@ -12,9 +12,14 @@ function getNotesWithNewNote(notes, newNote) {
   return [...notes, newNote];
 }
 
+function getNoteWithAuthor(note, author) {
+  note.author = author;
+  return note;
+}
+
 // Définition d'une fonction avec la notation fléchée (fat arrow)
 // const getNotesSorted = (notes) => {
 //   // return notes sorted
 // };
 
-module.exports = { getNotesSorted, getNotesWithNewNote };
+module.exports = { getNotesSorted, getNotesWithNewNote, getNoteWithAuthor };
