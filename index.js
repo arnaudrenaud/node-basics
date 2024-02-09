@@ -3,11 +3,10 @@
 // Définition classique d'une fonction avec le mot-clé `function`
 function getNotesSorted(notes) {
   return notes.sort((noteA, noteB) => {
-    const isPinnedDifferent = noteB.isPinned - noteA.isPinned;
-
-    return isPinnedDifferent
-      ? isPinnedDifferent
-      : noteB.lastUpdatedAt - noteA.lastUpdatedAt;
+    return (
+      noteB.isPinned - noteA.isPinned ||
+      noteB.lastUpdatedAt - noteA.lastUpdatedAt
+    );
   });
 }
 
