@@ -13,8 +13,7 @@ function getNotesWithNewNote(notes, newNote) {
 }
 
 function getNoteWithAuthor(note, author) {
-  Object.assign(note, { author: author });
-  return note;
+  return { ...note, author };
 }
 
 // Définition d'une fonction avec la notation fléchée (fat arrow)
