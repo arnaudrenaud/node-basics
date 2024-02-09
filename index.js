@@ -13,7 +13,7 @@ function getNotesWithNewNote(notes, newNote) {
 }
 
 function getNoteWithAuthor(note, author) {
-  note.author = author;
+  Object.assign(note, { author: author });
   return note;
 }
 
