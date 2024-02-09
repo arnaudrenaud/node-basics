@@ -4,10 +4,10 @@
 function getNotesSorted(notes) {
   return notes.sort((noteA, noteB) => {
     const isPinnedDifferent = noteB.isPinned - noteA.isPinned;
-    if (isPinnedDifferent) {
-      return isPinnedDifferent;
-    }
-    return noteB.lastUpdatedAt - noteA.lastUpdatedAt;
+
+    return isPinnedDifferent
+      ? isPinnedDifferent
+      : noteB.lastUpdatedAt - noteA.lastUpdatedAt;
   });
 }
 
