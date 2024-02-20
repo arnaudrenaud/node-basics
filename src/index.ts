@@ -1,18 +1,25 @@
 // Note : {content: string, lastUpdatedAt: Date, isPinned: boolean}
 
 // Définition classique d'une fonction avec le mot-clé `function`
-const getNotesSorted = (notes) =>
+type Note = {
+  content: string;
+  lastUpdatedAt: Date;
+  isPinned: boolean;
+  author?: string;
+};
+
+const getNotesSorted = (notes: Note[]): Note[] =>
   notes.sort(
     (noteA, noteB) =>
-      noteB.isPinned - noteA.isPinned ||
-      noteB.lastUpdatedAt - noteA.lastUpdatedAt
+      +noteB.isPinned - +noteA.isPinned ||
+      noteB.lastUpdatedAt.getTime() - noteA.lastUpdatedAt.getTime()
   );
 
-function getNotesWithNewNote(notes, newNote) {
+function getNotesWithNewNote(notes: Note[], newNote: Note): Note[] {
   return [...notes, newNote];
 }
 
-function getNoteWithAuthor(note, author) {
+function getNoteWithAuthor(note: Note, author: string): Note {
   return { ...note, author };
 }
 
