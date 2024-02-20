@@ -2,6 +2,7 @@ import {
   getNotesSorted,
   getNotesWithNewNote,
   getNoteWithAuthor,
+  getPinnedNotes,
 } from "./index";
 
 test("Addition", () => {
@@ -113,5 +114,35 @@ describe("getNoteWithAuthor", () => {
       isPinned: true,
       author: "Arnaud",
     });
+  });
+});
+
+describe("getPinnedNotes", () => {
+  it("returns pinned notes only", () => {
+    const notes = [
+      {
+        content: "Tests automatisés avec Jest",
+        lastUpdatedAt: new Date("2024-01-26T12:00:00.000Z"),
+        isPinned: false,
+      },
+      {
+        content: "Apprentissage de JavaScript",
+        lastUpdatedAt: new Date("2024-01-26T14:00:00.000Z"),
+        isPinned: false,
+      },
+      {
+        content: "Application Node.js",
+        lastUpdatedAt: new Date("2024-01-26T13:00:00.000Z"),
+        isPinned: true,
+      },
+    ];
+
+    expect(getPinnedNotes(notes)).toEqual([
+      {
+        content: "Application Node.js",
+        lastUpdatedAt: new Date("2024-01-26T13:00:00.000Z"),
+        isPinned: true,
+      },
+    ]);
   });
 });
