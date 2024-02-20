@@ -1,8 +1,8 @@
-const {
+import {
   getNotesSorted,
   getNotesWithNewNote,
   getNoteWithAuthor,
-} = require("./index");
+} from "./index";
 
 test("Addition", () => {
   expect(1 + 1).toEqual(2);

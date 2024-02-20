@@ -21,4 +21,4 @@ function getNoteWithAuthor(note, author) {
 //   // return notes sorted
 // };
 
-module.exports = { getNotesSorted, getNotesWithNewNote, getNoteWithAuthor };
+export { getNotesSorted, getNotesWithNewNote, getNoteWithAuthor };
