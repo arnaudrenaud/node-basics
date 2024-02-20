@@ -8,6 +8,11 @@
     "start": "node dist/.",
     "test": "jest"
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "src"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
