@@ -26,7 +26,7 @@ function getNoteWithAuthor(note: Note, author: string): Note {
 function getPinnedNotes(notes: Note[]): Note[] {
   const pinnedNotes: Note[] = [];
   for (const note of notes) {
-    if (note.isPinned === true) {
+    if (note.isPinned) {
       pinnedNotes.push(note);
     }
   }
