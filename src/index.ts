@@ -23,11 +23,8 @@ function getNoteWithAuthor(note: Note, author: string): Note {
   return { ...note, author };
 }
 
-function getPinnedNotes(notes: Note[]): Note[] {
-  return notes.filter((note) => {
-    return note.isPinned;
-  });
-}
+const getPinnedNotes = (notes: Note[]): Note[] =>
+  notes.filter((note) => note.isPinned);
 
 export {
   getNotesSorted,
