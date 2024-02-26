@@ -25,18 +25,13 @@ function getNoteWithAuthor(note: Note, author: string): Note {
 
 function getPinnedNotes(notes: Note[]): Note[] {
   const pinnedNotes: Note[] = [];
-  for (const note of notes) {
+  notes.forEach((note) => {
     if (note.isPinned) {
       pinnedNotes.push(note);
     }
-  }
+  });
   return pinnedNotes;
 }
-
-// Définition d'une fonction avec la notation fléchée (fat arrow)
-// const getNotesSorted = (notes) => {
-//   // return notes sorted
-// };
 
 export {
   getNotesSorted,
