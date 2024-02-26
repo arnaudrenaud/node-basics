@@ -3,6 +3,7 @@ import {
   getNotesWithNewNote,
   getNoteWithAuthor,
   getPinnedNotes,
+  getPreviewForNotes,
 } from "./index";
 
 test("Addition", () => {
@@ -143,6 +144,34 @@ describe("getPinnedNotes", () => {
         lastUpdatedAt: new Date("2024-01-26T13:00:00.000Z"),
         isPinned: true,
       },
+    ]);
+  });
+});
+
+describe("getPreviewForNotes", () => {
+  it("returns first word of content for each note", () => {
+    const notes = [
+      {
+        content: "Tests automatisés avec Jest",
+        lastUpdatedAt: new Date("2024-01-26T12:00:00.000Z"),
+        isPinned: false,
+      },
+      {
+        content: "Apprentissage de JavaScript",
+        lastUpdatedAt: new Date("2024-01-26T14:00:00.000Z"),
+        isPinned: false,
+      },
+      {
+        content: "Application Node.js",
+        lastUpdatedAt: new Date("2024-01-26T13:00:00.000Z"),
+        isPinned: true,
+      },
+    ];
+
+    expect(getPreviewForNotes(notes)).toEqual([
+      "Tests",
+      "Apprentissage",
+      "Application",
     ]);
   });
 });
