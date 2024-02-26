@@ -26,13 +26,8 @@ function getNoteWithAuthor(note: Note, author: string): Note {
 const getPinnedNotes = (notes: Note[]): Note[] =>
   notes.filter((note) => note.isPinned);
 
-const getPreviewForNotes = (notes: Note[]): string[] => {
-  const previews = [];
-  for (const note of notes) {
-    previews.push(note.content.split(" ")[0]);
-  }
-  return previews;
-};
+const getPreviewForNotes = (notes: Note[]): string[] =>
+  notes.map((note) => note.content.split(" ")[0]);
 
 export {
   getNotesSorted,
