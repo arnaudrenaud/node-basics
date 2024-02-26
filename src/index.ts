@@ -24,13 +24,9 @@ function getNoteWithAuthor(note: Note, author: string): Note {
 }
 
 function getPinnedNotes(notes: Note[]): Note[] {
-  const pinnedNotes: Note[] = [];
-  notes.forEach((note) => {
-    if (note.isPinned) {
-      pinnedNotes.push(note);
-    }
+  return notes.filter((note) => {
+    return note.isPinned;
   });
-  return pinnedNotes;
 }
 
 export {
