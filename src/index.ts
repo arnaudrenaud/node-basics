@@ -20,7 +20,7 @@ function getNotesWithNewNote(notes: Note[], newNote: Note): Note[] {
 }
 
 function getNoteWithAuthor(note: Note, author: string): Note {
-  return { ...note, author: "" };
+  // return { ...note, author };
 }
 
 const getPinnedNotes = (notes: Note[]): Note[] =>
