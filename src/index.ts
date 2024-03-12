@@ -1,4 +1,10 @@
 import express from "express";
+import pg from "pg";
+
+const dbClient = new pg.Client(
+  "postgres://postgres:password@database:5432/postgres"
+);
+dbClient.connect();
 
 const app = express();
 
