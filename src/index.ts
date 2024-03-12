@@ -6,6 +6,6 @@ app.get("/", (request, response) => {
   return response.send("Hello world!");
 });
 
-app.listen(5500, () => {
-  console.log("Listening on port 5500.");
+app.listen(3000, () => {
+  console.log("Listening on port 3000.");
 });
