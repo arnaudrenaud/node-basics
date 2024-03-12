@@ -4,7 +4,7 @@ import {
   getNoteWithAuthor,
   getPinnedNotes,
   getPreviewForNotes,
-} from "./index";
+} from "./notes";
 
 test("Addition", () => {
   expect(1 + 1).toEqual(2);
