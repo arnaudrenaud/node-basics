@@ -14,3 +14,17 @@ Pour formater automatiquement chaque fichier lors de sa sauvegarde, cocher l'opt
 ## Initialisation d'un projet similaire
 
 Exécuter la commande `npm init` (déjà fait dans le projet présent, ne pas refaire).
+
+### Conteneurisation avec Docker et Docker Compose
+
+Lancer le projet (serveur web et base de données) :
+
+```
+docker compose watch
+```
+
+Afficher les logs en parallèle :
+
+```
+docker compose logs -f
+```

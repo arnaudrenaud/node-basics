@@ -5,6 +5,12 @@ services:
     build: .
     ports:
       - 5500:3000
+    depends_on:
+      - database
+    develop:
+      watch:
+        - action: rebuild
+          path: ./
 
   database:
     image: postgres:16.2
