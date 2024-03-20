@@ -15,7 +15,10 @@ dbClient.query(`INSERT INTO "Post" ("content") VALUES ('Mon premier post.');`);
 const app = express();
 
 app.get("/", async (request, response) => {
-  return response.send(await dbClient.query(`SELECT * FROM "Post";`));
+  const dbResponse = await dbClient.query(
+    `SELECT content FROM "Post" ORDER BY id LIMIT 1;`
+  );
+  return response.send(dbResponse.rows[0].content);
 });
 
 app.listen(3000, () => {
