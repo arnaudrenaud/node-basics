@@ -16,9 +16,16 @@ const app = express();
 
 app.get("/", async (request, response) => {
   const dbResponse = await dbClient.query(
-    `SELECT content FROM "Post" ORDER BY id LIMIT 1;`
+    `SELECT content FROM "Post" ORDER BY id DESC LIMIT 1;`
   );
   return response.send(dbResponse.rows[0].content);
+});
+
+app.post("/", async (request, response) => {
+  await dbClient.query(
+    `INSERT INTO "Post" ("content") VALUES ('Un nouveau post.');`
+  );
+  return response.send("Post créé.");
 });
 
 app.listen(3000, () => {

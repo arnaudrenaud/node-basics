@@ -23,6 +23,8 @@ Lancer le projet (serveur web et base de données) :
 docker compose watch
 ```
 
+(ou `docker compose up --build`).
+
 Afficher les logs en parallèle :
 
 ```
