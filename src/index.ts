@@ -1,9 +1,7 @@
 import express from "express";
 import pg from "pg";
 
-const dbClient = new pg.Client(
-  "postgres://postgres:password@database:5432/postgres"
-);
+const dbClient = new pg.Client(process.env.DATABASE_URL);
 dbClient.connect();
 
 dbClient.query(`CREATE TABLE IF NOT EXISTS "Post" (

@@ -1,20 +1,20 @@
 version: "3.8"
 
 services:
-  web-server:
+  e2e-web-server:
     build: .
     environment:
-      - DATABASE_URL=postgres://postgres:password@database:5432/postgres
+      - DATABASE_URL=postgres://postgres:password@e2e-database:5432/postgres
     ports:
-      - 5500:3000
+      - 5999:3000
     depends_on:
-      - database
+      - e2e-database
     develop:
       watch:
         - action: rebuild
           path: ./
 
-  database:
+  e2e-database:
     image: postgres:16.2
     environment:
       - POSTGRES_PASSWORD=password
